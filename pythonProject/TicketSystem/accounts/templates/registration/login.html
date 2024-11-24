@@ -1,0 +1,18 @@
+<head>
+    <h1>Account login.</h1>
+    <hr/>
+</head>
+
+<body>
+<p>Please enter relevant credentials to log into your account below in the fields:</p>
+    <form method = "POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button>Confirm login details.</button>
+        <br>
+    <br><p>Still need to register? <a href="/register">Click here to register.</p>
+    </form>
+</body>
+
+</html>

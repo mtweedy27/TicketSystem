@@ -1,0 +1,73 @@
+<style>
+nav_bar {
+      float: left;
+      display: block;
+      width: 100%;
+      padding: 0%;
+      background-color: #DCDCDC;
+      }
+
+footer {
+      margin-top: 5%;
+      }
+
+nav_button a {
+      float: left;
+      display: block;
+      text-align: center;
+      padding: 10px 12px;
+      text-decoration: none;
+      }
+
+msg {
+    float: left;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #1E90FF;
+    color: #FFFFFF;
+    font-weight: 900;
+    }
+
+
+
+</style>
+
+{% if user.is_authenticated %}
+
+<nav_bar>
+    <nav_button><a href="/dashboard">Officer Dashboard</a></nav_button>
+    <nav_button><a href="/create">Create New Ticket</a></nav_button>
+    <nav_button><a href="/view">View All Tickets</a></nav_button>
+</nav_bar>
+<hr/>
+
+{% if messages %}
+    {% for message in messages %}
+        <msg {% if message.tags %} class="{{ message.tags }}"{% endif %}>INFORMATION: {{ message }}</msg>
+    {% endfor %}
+    <br>
+{% endif %}
+
+    {% block content %}
+    {% endblock %}
+<br>
+
+<footer>
+    <br>
+    <hr/>
+    <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        <button>Log out</button>
+        <button><a href="/admin">Admin site</a></button>
+    </form>
+</footer>
+
+
+{% else %}
+    <h1>Authentication error/Unauthorized access</h1>
+    <p>Current user is not authenticated.</p> <br>
+    <button><a href="/">Click here to return to site landing page.</a></button>
+
+{% endif %}

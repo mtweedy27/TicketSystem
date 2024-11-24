@@ -1,0 +1,40 @@
+{% extends "officerpages/base.html" %}
+
+{% block content %}
+
+<head>
+    <h1>View Tickets</h1>
+    <hr>
+</head>
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <p>Below is a list of all the tickets raised. This includes the details for the tickets title, module (or type), and description:</p>
+    <br>
+        <table>
+            <tr>
+                <th>Module/Type</th>
+                <th>Ticket Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            {% for Tickets_data in Tickets_data %}
+            <tr>
+                <td>{{Tickets_data.TicketTypeId}}</td>
+                <td>{{Tickets_data.Title}}</td>
+                <td>{{Tickets_data.Description}}</td>
+                <td> <button><a href="/update/{{Tickets_data.id}}">Update Ticket</a></button> </td>
+            </tr>
+            {% endfor %}
+        </table>
+    <br>
+    <button><a href="/dashboard">Return to dashboard</a></button>
+</body>
+
+{% endblock %}

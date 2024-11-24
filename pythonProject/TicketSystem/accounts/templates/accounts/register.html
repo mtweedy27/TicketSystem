@@ -1,0 +1,19 @@
+<head>
+    <h1>Account registration.</h1>
+    <hr/>
+</head>
+
+<body>
+<p>Please utilise the form below to register as a user.</p>
+    <form method = "POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button>Confirm registration details.</button>
+        <br>
+        <br>
+        <p>Already have a user? <a href="/login">Click here to login.</p>
+    </form>
+</body>
+
+</html>
