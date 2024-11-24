@@ -1,0 +1,20 @@
+{% extends "officerpages/base.html" %}
+
+{% block content %}
+
+<head>
+    <h1>Create Ticket</h1>
+    <hr/>
+</head>
+
+<body>
+<p>Please list any details of bugs or incidents that need to be raised in the form below:</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button><a href="/dashboard">Cancel</a></button>
+        <button>Submit ticket</button>
+    </form>
+</body>
+
+{% endblock %}
