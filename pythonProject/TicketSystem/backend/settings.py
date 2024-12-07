@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -81,7 +80,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default='postgresql://ticketsystem_y5bn_user:3iIRSBn0dAwqBiHmdMNhE208BAKbBXu0@dpg-ct9rnfl6l47c73be8leg-a/ticketsystem_y5bn',
         conn_max_age=600
     )
 }
