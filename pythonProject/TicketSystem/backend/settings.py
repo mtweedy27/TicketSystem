@@ -27,7 +27,12 @@ SECRET_KEY = 'django-insecure-lfd1y*(1q#5!=i-0wqjshchz()zvm63fc^c7d)ty$8i8)k%=7j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ticketsystem-in8h.onrender.com']
+
+# Added to ensure environment runs via render.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_ALLOWED_ORIGINS = ["https://ticketsystem-in8h.onrender.com"]
+CORS_ORIGINS_WHITELIST = ["https://ticketsystem-in8h.onrender.com"]
 
 # Application definition
 
