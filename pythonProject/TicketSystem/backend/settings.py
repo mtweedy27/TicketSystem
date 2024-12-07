@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["ticketsystem-in8h.onrender.com"]
 
 # Added to ensure environment runs via render.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_TRUSTED_ORIGINS = ["https://ticketsystem-in8h.onrender.com"]
 CSRF_ALLOWED_ORIGINS = ["https://ticketsystem-in8h.onrender.com"]
 CORS_ORIGINS_WHITELIST = ["https://ticketsystem-in8h.onrender.com"]
 
